@@ -16,6 +16,7 @@ Aplicación web para controlar una cartera de préstamos: clientes, intereses, c
 - Recibo de pago como imagen para compartir (cuotas pagadas y pendientes, saldo y próximo pago), con opción de deshacer el pago recién hecho y de imprimir el recibo clásico.
 - Colores de estado: cuota pagada en verde, cuota atrasada en rojo con alerta en el Panel.
 - Botón de sol/luna en la cabecera para cambiar entre tema claro y oscuro.
+- Diseño tipo dashboard: menú lateral con iconos en el computador y barra inferior en el celular. Tema claro con fondo blanco y tema oscuro casi negro.
 - Recibos imprimibles, reportes, exportar e importar respaldo (.json): al importar se elige «Fusionar» (agrega lo que falta) o «Reemplazar todo».
 - Cada cuota del cronograma tiene su botón «Pagar» (si hay cuotas anteriores pendientes, se pagan también).
 - Reportes > «Estado de clientes»: filtros Al día, Por finalizar, Finalizados y En mora; «Recibo» envía por WhatsApp el estado de cuenta (o paz y salvo) como imagen o texto, las veces que quieras; «Nuevo crédito» abre el formulario con el cliente elegido. «🎁 Ofrecer crédito» abre un mensaje cordial editable (con valor disponible opcional) para enviar por WhatsApp como texto o imagen; la app anota la fecha y las veces que se envió. El Panel avisa de los clientes por terminar (faltan N cuotas, ajustable en Reportes) o finalizados en los últimos 30 días para ofrecerles un nuevo crédito.
@@ -68,6 +69,8 @@ screenshot-*.png        Capturas para el diálogo de instalación
 - 3.16: botón «Pagar solo intereses» (pago con `tipo:'int'`, campo opcional): aplaza la cuota pendiente y las siguientes un período por cada pago, sin tocar capital ni saldo; suma a ganancias y capital recibido; recibo «Abono a intereses · cuota aplazada al…»; aviso desde 3 aplazamientos; no cobra la mora ya generada. No cambia el esquema de datos (`VER` 4): los datos y copias existentes se conservan.
 
 - 3.17: la aprobación del préstamo (imagen y mensaje de WhatsApp) ya no muestra el interés ni el «Total a pagar»; el cliente solo ve valor aprobado, cuotas, valor de cada cuota y fechas de pago. **No volver a agregar esas filas en `approval()`.** El resumen interno del préstamo no cambia. No cambia el esquema de datos (`VER` 4).
+
+- 3.18: nuevo diseño tipo dashboard: menú lateral con iconos en escritorio y barra inferior en el móvil; tema claro con fondo blanco y tema oscuro casi negro (`--bg`, `--soft`, `--card`, `--line`). Solo cambia el aspecto (HTML/CSS y la función `nav()`); no se toca la lógica ni los datos. No cambia el esquema de datos (`VER` 4): los datos existentes se conservan.
 
 ## Interruptor remoto (estado.json)
 
